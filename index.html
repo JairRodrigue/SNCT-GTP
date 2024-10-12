@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Tarefas e Projetos</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="imagem.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Planejamento de Tarefas e Projetos</h1>
+        </header>
+        
+        <div id="banner" style="display:none;">
+            <h2>Tarefas e Projetos em Andamento</h2>
+        </div>
+
+        <section class="task-form">
+            <h2>Adicionar Nova Tarefa</h2>
+            <form id="task-form">
+                <div class="input-group">
+                    <label for="task-title">Título da Tarefa</label>
+                    <input type="text" id="task-title" name="task-title" placeholder="Digite o título da tarefa" required>
+                </div>
+                <div class="input-group">
+                    <label for="task-description">Descrição</label>
+                    <textarea id="task-description" name="task-description" placeholder="Digite a descrição da tarefa" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="due-date">Data de Conclusão</label>
+                    <input type="date" id="due-date" name="due-date" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn">Adicionar Tarefa</button>
+                </div>
+            </form>
+        </section>
+        
+        <section class="task-list">
+            <h2>Tarefas Planejadas</h2>
+            <ul id="pending-tasks">
+            </ul>
+        </section>
+
+        <section class="completed-tasks">
+            <h2>Tarefas Concluídas</h2>
+            <ul id="completed-tasks">
+            </ul>
+        </section>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
