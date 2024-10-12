@@ -84,6 +84,13 @@ header h1 {
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    height: 150px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: normal; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
 }
 
 .task-list li:hover, .completed-tasks li:hover {
