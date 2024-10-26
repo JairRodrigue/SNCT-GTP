@@ -38,7 +38,6 @@ async function addTask(event) {
     }
 }
 
-
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: '2-digit', month: 'long', year: 'numeric' };
@@ -54,18 +53,10 @@ async function loadTasks() {
 
     const querySnapshot = await getDocs(collection(db, "tasks"));
 
-    const tasks = []; 
-
     querySnapshot.forEach((doc) => {
-        const task = { id: doc.id, ...doc.data() }; 
-        tasks.push(task);
-    });
+        const task = { id: doc.id, ...doc.data() };
 
-    tasks.sort((a, b) => b.createdAt - a.createdAt);
-
-    tasks.forEach((task) => {
         const taskElement = document.createElement("li");
-        
         const formattedDueDate = formatDate(task.dueDate);
 
         taskElement.innerHTML = `<strong style="font-size: 1.1">${task.title}</strong> <br>${task.description} <br><span style="font-size: 0.9em; color: rgba(0, 0, 0, 0.6);">Prazo: ${formattedDueDate}</span>`;
